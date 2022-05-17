@@ -6,11 +6,14 @@
 }
 
 :root {
-  --color-primary: #ffc500;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   /*nessa região utilizamos a definição de fontes no seletor próprio para o root, ou seja, onde estão as informações próprias para o site*/
   /*16px = 1rem - é o que o navegador aplica por padrão na formatação do site*/
+  --color-primary: #ffc500;
+  --default-padding: 1rem;
+  /*estabelecerá que o padding padrão será de 1 rem ou 16px*/
+  /*precisa ser assim pois a ordem em cascata faz com que seja aplicada e definida a fonte e depois o padding de 1rem, baseado no tamanho da fonte de 16px. Se fosse ao contrário, o font-size sobrescreveria a informação de 1rem, e ele se basearia nos novos valores de font-size */
 }
 
 body {
@@ -35,6 +38,8 @@ ul {
   /*aplicará as alterações em toda a estrutura da barra de navegação*/
   position: fixed;
   /* position: fixed; - Essa propriedade fará com que a barra de navegação fique fixa na tela, conforme o usuário vai utilizando a barra de rolagem.*/
+  z-index: 1;
+  /*define a prioridade de um elemento, para que ele fique acima dos demais, ou seja, a navbar ficará por cima dos elementos, mesmo que eles tenham uma propriedade position absolute ou relative*/
   display: grid;
   /*in line - quando for texto / block - elemento que for causar quebra de linha, mas que podemos controlar este elemento*/
   grid-template-columns: 1fr 9fr;
@@ -117,4 +122,120 @@ ul {
 .copy--primary {
   /*aplicará a coloração na classe da logo, conforme o projeto*/
   color: var(--color-primary)
+}
+
+#slider {
+  /*aplicará as configurações no slider contido no cabeçalho (header)*/
+  background-color: #000;
+  color: #fff;
+  /*por convenção e boas práticas de escrita, é comum utilizar as cores en hexadecimal, ao invés de utilizar seus respectivos nomes*/
+
+  /*OUTRA OPÇÃO De APLICAÇÃO DO BACKGROUND
+  
+  background-image: url(./images/banner.jpg);
+  colocar uma imagem como background deste elemento
+  sempre colocar o ./ pois ele simboloza a pasta onde está o nosso style.css, pesquisando se tem uma pasta images e um arquivo banner.jpg
+
+  background-size: cover;
+  garantir que essa imagem será exibida por inteira, de uma forma que não distorça a imagem
+
+  background-repeat: no-repeat;
+  define que o background não se repita, ficando uma única imagem
+
+  background-position: center;
+  define o posicionamento do backgroud, para que o centro da imagem se aplique no centro do elemento*/
+}
+
+.slide {
+  /*aplicará as configurações tanto na imagem quanto no texto do cabeçalho*/
+  position: relative;
+  /*isso fará com que o filho fique preso dentro do pai, ou seja, não deixará o slide__copy sairá para fora do elemento slide, ou seja, ir para baixo da nossa altura*/
+  height: calc(100vh - 7.75rem);
+  /*aplicará a altura do slider baseado em 100 de vertical height, ou seja, 100% da visualização de tela, subtraindo os 7.75rem da barra de navgação, através da função "calc"*/
+}
+
+.slide__background-image {
+  /*aplicará as configurações na imagem do background*/
+  width: 100%;
+  /*ocupa a largura inteira disponível*/
+  height: 100%;
+  /*ocupa a altura inteira disponível*/
+  object-fit: cover;
+  /*propriedade para cobrir a tela*/
+  object-position: center;
+  /*propriedade para centralizar a imagem*/
+}
+
+.slide__copy {
+  /*aplicará as configurações no texto do cabeçalho*/
+  position: absolute;
+  /*define a posição dos elementos de texto, neste caso - deixa ele ir para todo lugar da página - este é o elemento pai*/
+  top: 6.25rem;
+  /*define que ele ficará no topo, numa distância de 6.25rem a partir da barra de navegação, pois no projeto, a distância é de 100px, que dividido por 16px, resulta nos 6.25rem, respeitando a largura da barra de navegação*/
+  left: 50vw;
+  /*define que o texto aparecerá a partir de 50vw*/
+}
+
+.slide__copy h6 {
+  /*aplicará as configurações para todos os h6 que estiverem dentro da classe slide__copy*/
+  font-size: 0.9375rem;
+  /*define o tamanho da fonte - como no projeto tem 15px, são 15/16, ou seja, 0.9375rem*/
+  font-weight: 400;
+  /*define o peso da fonte - como no projeto é regular, então seria o equivalente a 400*/
+  text-transform: uppercase;
+  /*define que o texto ficará todo em caixa-alta*/
+  letter-spacing: 0.1875rem;
+  /*define o espaçamento personalizado entre as letras, conforme estipulado em projeto*/
+}
+
+.slide__copy h2 {
+  /*aplicará as configurações para todos os h2 que estiverem dentro da classe slide__copy*/
+  font-size: 6.25rem;
+  /*define o tamanho da fonte - como no projeto tem 100px, são 100/16, ou seja,6.25rem*/
+  text-transform: uppercase;
+  /*define que o texto ficará todo em caixa-alta*/
+  line-height: 6.25rem;
+  /*define a altura de linha, para que o espaçamento entre as palavras fique identico ao projeto*/
+}
+
+.slide__copy h2 span {
+  /*aplicará as configurações para o elemento SPAN dentro do h2*/
+  display: block;
+  /*define que independente da resolução da tela, haverá a quebra de linha entre as palavras CREATIVE e MINDS, conforme o projeto*/
+}
+
+.btn {
+  /*aplicará as configurações para o botão (saiba mais)*/
+  cursor: pointer;
+  /*fará com que o cursor vire a "mãozinha" quando passar por cima do botão, para ver que ele é clicável e chamar a atenção do usuário*/
+  padding: 1rem 2.50rem;
+  /*aplicará um padding (distancia entre o texto e a caixa) de 20px cima/baixo, ou seja, 20/16 = 1.25rem e 40px esquerda/direita, ou seja, 40/16 = 2.50rem, porém, no caso da altura, vamos deixar em 1rem, para ficar mais próximo do efeito desejado de pílula, mais achatado*/
+  border: 0.125rem solid #fff;
+  /*definirá as configurações da borda do botão - largura de linha, estilo de linha, cor. No projeto a borda tem 2px, ou seja, 2/16 = 0.125rem. Foi definido o estilo de linha sólido e a cor branca em hexadecimal como padrão de escrita*/
+  border-radius: 5rem;
+  /*aplicará o arredondamento das bordas do botão - no projeto, o valor é de 26px, ou seja, 26/16 = 1.625rem - porém, este valor não chega no resultado esperado, então, colocamos um valor maior que ele, para garantir o formato de pílula no botão*/
+  color: var(--color-primary);
+  /*definirá a cor padrão amarela do layout para o texto do botão*/
+  background: unset;
+  /*toda vez que eu quiser resetar para o valor mais neutro possível de uma propriedade, devo usar o valor "unset" - serve para remover o background do botão*/
+  font-size: 0.9375rem;
+  /*define o tamanho de fonte de texto - no projeto consta 15px, ou seja, 15/16 = 0.9375rem */
+  font-weight: 700;
+  /*define o peso da fonte - no projeto é Bold, ou seja, o valor de 700*/
+  text-transform: uppercase;
+  /*define que o texto fique em caixa alta*/
+  transition: 0.3s all ease;
+  /*define propriedade de animações entre as mudanças de propriedade, dando mais dinamismo e ficando mais interessante visualmente - consigo estipular o tempo que levará pra fazer a transição entre o valor de uma propriedade para outra - a cor por exemplo (0.5s), o que será alterado nessa transição (all) e a curva de animação (ease) - a mais balanceada*/
+}
+
+.btn:hover, 
+.btn:active, 
+.btn:focus {
+  /*desta forma, faz um seletor que funcionará um mesmo código para todos eles, ou seja, para mais de um caso, selecionando vários elementos ou classes de um HTML, separando por vírgula*/
+  border-color: var(--color-primary);
+  /*define a cor da borda quando passar o mouse por cima*/
+  background-color: var(--color-primary);
+  /*define a cor do brackground quando passar o mouse por cima*/
+  color: #fff;
+  /*define a cor do texto quando passar o mouse por cima, que neste caso, como o background ficará amarelo, o texto precisa alterar para branco, para viabilizar a leitura*/
 }
