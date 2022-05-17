@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300,400;700;900&display=swap');
+/*300-Light, 400-Regular, 700-Bold, 900-Black*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #ffc500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  /*nessa região utilizamos a definição de fontes no seletor próprio para o root, ou seja, onde estão as informações próprias para o site*/
+  /*16px = 1rem - é o que o navegador aplica por padrão na formatação do site*/
+}
+
+body {
+  /*aplicará as alterações em toda a estrutura do body*/
+  margin: 0;
+  /*remove a margem de toda a estrutura do body*/
+  padding-top: 7.75rem;
+  /*fazendo isso, conseguiremos jogar o conteúdo para baixo, para que não fique abaixo da barra de navegação, sendo que 7,75rem é a altura definida da barra de navegação*/
+}
+
+ul {
+  /*aplicará as alterações em toda a estrutura da lista*/
+  display: flex;
+  /* display: flex; - coloca os itens da lista lado a lado, na horizontal, ao invés de estarem organizados na vertical, como é por padrão o display: block;*/
+  list-style: none;
+  /* configuração para remoção das bolinhas que ficam, quando se está configurando uma lista*/
+  padding-left: 0;
+  /*removendo o padding à esquerda da caixa da lista, que através do inspecionar, mostrava um espaço de "margem"*/
+}
+
+.navbar {
+  /*aplicará as alterações em toda a estrutura da barra de navegação*/
+  position: fixed;
+  /* position: fixed; - Essa propriedade fará com que a barra de navegação fique fixa na tela, conforme o usuário vai utilizando a barra de rolagem.*/
+  display: grid;
+  /*in line - quando for texto / block - elemento que for causar quebra de linha, mas que podemos controlar este elemento*/
+  grid-template-columns: 1fr 9fr;
+  /*essa propriedade define que você deixa uma fração do espaço para a logo studion e o restante, as nova frações para a lista*/
+  align-items: center;
+  /*essa propriedade fará com que toda essa linha de itens será alinhada no centro na vertical*/
+  top: 0;
+  left: 0;
+  /*remove as margens superior e esquerdas da barra de navegação*/
+
+  width: 100vw;
+  /* width: 100%; ou width: 100vw; ajusta a largura para 100% da página*/
+  height: 7.75rem;
+  /* definindo a altura da nossa barra de navegação para ficar num tamanho fixo mais previsível*/
+  padding: 0 1rem;
+  /*este valor de padding aplicará diretamente na barra de navageção - se passar só um valor aqui ele aplicará o mesmo para todos os lados - se pasar mais de um valor o primeiro aplica para cima e para baixo (0) e o segundo para esquerda e para a direita (1)*/
+
+  background-color: #000;
+  color: #fff;
+  /* na formatação hexadecimal de cor, o primeiro número seria referente ao vermelho, o segundo de verde, o terceiro o quanto de azul e o quarto número indicaria a transparência do objeto - 0 - F. */
+  /* color: #fff - resulta na cor branca e a propriedade color é referente ao texto */
+}
+
+.navbar__links {
+  /*aplicará as alterações em todos os links da barra de navegação*/
+  justify-self: end;
+  /*propriedade de alinhamento para itens que estão dentro de um grid - com a subpropriedade end fará com que a barra de navegação se alinhará a direita */
+}
+
+.navbar__links li {
+  /*aplicará as alterações em todos os itens da lista da barra de navegação*/
+  font-size: 0.875rem;
+  /*no projeto base a fonte das letras da barra de navegação tÊm 14px, ou seja 14/16 = 0,875rem*/
+  margin-right: 3rem;
+  /*desta forma, conseguimos separar os itens da lista com um espaçamento proporcional entre elas*/
+  /*se quiséssemos utilizar um valor correspondente a 10px, porém, em rem, teríamos que dividir 10/16, visto que 1rem equivale a 16px, o que resultaria em 0,625, sendo este valor agora convertido em rem */
+  /*como o projeto define que são 48 pixels de distância entre cada link da barra da navegação, 48/3 = 3 rem*/
+  text-transform: uppercase;
+  /*essa propriedade transforma todo o texto em caixa alta para estilização do texto*/
+}
+
+.navbar__links a {
+    /*Nesta seção, ao utilizar o seletor "a", fará com que todas as tags "a" dentro desta classe, sofrerão as alterações aplicadas nesta seção*/
+  font-weight: 300;
+  /*esta propriedade define o peso da fonte - light*/
+  color: #fff;
+  /*esta propriedade e seu valor aplicarão a cor branca ao texto*/
+  text-decoration: none;
+  /*esta propriedade e seu valor farão com que a barra que aparece embaixo do link suma, o sublinhado*/
+}
+
+.navbar__links a:hover {
+  /*É um estado em que quando eu passar o mouse em cima dos elementos de tag "a", algo deverá acontecer*/
+  color: var(--color-primary);
+  /*Ao passar o mouse por cima da barra de navegação, cada item assumirá essa cor. A função var chama a variável cor cadastrada na seção root*/
+}
+
+.logo-studion {
+  /*aplicará as configurações no título studion*/
+  font-size: 2.375rem;
+  /*definindo o tamanho da fonte, sendo que no projeto são 38px ou seja 38px/16px = 2,375rem*/
+  font-weight: 900;
+  /*definindo o peso da fonte - black*/
+  line-height: 1ch;
+  /*definindo a altura da linha, sendo ch a unidade de medida relativa ao tamanho da altura do glifo 0 da fonte, como base de unidade - boa para lidar com espaçamento de texto*/
+  text-transform: uppercase;
+  /*para deixar todo o texto em caixa alta*/
+  text-align: right;
+  /*para alinhar o texto da logo à direita*/
+}
+
+.logo-studion__subtitle {
+  /*aplicará as configurações no subtítulo eventos*/
+  font-size: 0.875rem;
+  /*definindo o tamanho da fonte - como no projeto são 14px, significa que dividimos 14px/16px, já que 1rem = 16px, obtendo assim 0,875rem*/
+  font-weight: 300;
+  /*definindo o peso da fonte - regular*/
+}
+
+.copy--primary {
+  /*aplicará a coloração na classe da logo, conforme o projeto*/
+  color: var(--color-primary)
+}
