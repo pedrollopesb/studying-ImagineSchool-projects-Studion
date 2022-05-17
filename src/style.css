@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300,400;700;900&display=swap');
-/*300-Light, 400-Regular, 700-Bold, 900-Black*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto&display=swap');
+/*300-Light, 400-Regular, 500-Medium, 700-Bold, 900-Black*/
 
 * {
   box-sizing: border-box;
@@ -10,10 +10,15 @@
   font-size: 16px;
   /*nessa região utilizamos a definição de fontes no seletor próprio para o root, ou seja, onde estão as informações próprias para o site*/
   /*16px = 1rem - é o que o navegador aplica por padrão na formatação do site*/
+  --color-copy: #333;
+  /*inclusão de uma variável de cor*/
   --color-primary: #ffc500;
+    /*inclusão de uma variável de cor*/
   --default-padding: 1rem;
   /*estabelecerá que o padding padrão será de 1 rem ou 16px*/
   /*precisa ser assim pois a ordem em cascata faz com que seja aplicada e definida a fonte e depois o padding de 1rem, baseado no tamanho da fonte de 16px. Se fosse ao contrário, o font-size sobrescreveria a informação de 1rem, e ele se basearia nos novos valores de font-size */
+  color: var(--color-copy);
+    /*estabelecerá que a cor padrão de texto é nesse tom de cinza*/
 }
 
 body {
@@ -22,6 +27,23 @@ body {
   /*remove a margem de toda a estrutura do body*/
   padding-top: 7.75rem;
   /*fazendo isso, conseguiremos jogar o conteúdo para baixo, para que não fique abaixo da barra de navegação, sendo que 7,75rem é a altura definida da barra de navegação*/
+}
+
+header,
+main,
+footer {
+  /*afetaremos os três elementos semânticos que temos dentro do body*/
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* para ele ocultar qualquer conteúdo de X que vá além do que ele deveria */
+}
+
+.container {
+  /*aplicará as alterações em toda a estrutura do container*/
+  max-width: 1140px;
+  /*único lugar em que usaria uma dimensão em pixels - para definir um tamanho máximo para garantir qu enosso conteúdo fique no meio como em nosso design*/
+  margin: 0 auto;
+  /*para não aplicar margem para cima e para baixo e deixar para o navegador definir as margens para esquerda e direita*/
 }
 
 ul {
@@ -40,15 +62,25 @@ ul {
   /* position: fixed; - Essa propriedade fará com que a barra de navegação fique fixa na tela, conforme o usuário vai utilizando a barra de rolagem.*/
   z-index: 1;
   /*define a prioridade de um elemento, para que ele fique acima dos demais, ou seja, a navbar ficará por cima dos elementos, mesmo que eles tenham uma propriedade position absolute ou relative*/
+  top: 0;
+  left: 0;
+  /*remove as margens superior e esquerdas da barra de navegação*/
+  width: 100%;
+  /*para ocupar 100% da largura de tela*/
+  background-color: #000;
+  color: #fff;
+  /* na formatação hexadecimal de cor, o primeiro número seria referente ao vermelho, o segundo de verde, o terceiro o quanto de azul e o quarto número indicaria a transparência do objeto - 0 - F. */
+  /* color: #fff - resulta na cor branca e a propriedade color é referente ao texto */
+}
+
+.navbar__container {
+  /*aplicará as alterações em toda a estrutura do container da barra de navegação*/
   display: grid;
   /*in line - quando for texto / block - elemento que for causar quebra de linha, mas que podemos controlar este elemento*/
   grid-template-columns: 1fr 9fr;
   /*essa propriedade define que você deixa uma fração do espaço para a logo studion e o restante, as nova frações para a lista*/
   align-items: center;
   /*essa propriedade fará com que toda essa linha de itens será alinhada no centro na vertical*/
-  top: 0;
-  left: 0;
-  /*remove as margens superior e esquerdas da barra de navegação*/
 
   width: 100vw;
   /* width: 100%; ou width: 100vw; ajusta a largura para 100% da página*/
@@ -56,11 +88,6 @@ ul {
   /* definindo a altura da nossa barra de navegação para ficar num tamanho fixo mais previsível*/
   padding: 0 1rem;
   /*este valor de padding aplicará diretamente na barra de navageção - se passar só um valor aqui ele aplicará o mesmo para todos os lados - se pasar mais de um valor o primeiro aplica para cima e para baixo (0) e o segundo para esquerda e para a direita (1)*/
-
-  background-color: #000;
-  color: #fff;
-  /* na formatação hexadecimal de cor, o primeiro número seria referente ao vermelho, o segundo de verde, o terceiro o quanto de azul e o quarto número indicaria a transparência do objeto - 0 - F. */
-  /* color: #fff - resulta na cor branca e a propriedade color é referente ao texto */
 }
 
 .navbar__links {
@@ -150,8 +177,8 @@ ul {
   /*aplicará as configurações tanto na imagem quanto no texto do cabeçalho*/
   position: relative;
   /*isso fará com que o filho fique preso dentro do pai, ou seja, não deixará o slide__copy sairá para fora do elemento slide, ou seja, ir para baixo da nossa altura*/
-  height: calc(100vh - 7.75rem);
-  /*aplicará a altura do slider baseado em 100 de vertical height, ou seja, 100% da visualização de tela, subtraindo os 7.75rem da barra de navgação, através da função "calc"*/
+  height: calc(90vh - 7.75rem);
+  /*aplicará a altura do slider baseado em 90 de visual height, ou seja, 100% da visualização de tela, subtraindo os 7.75rem da barra de navgação, através da função "calc"*/
 }
 
 .slide__background-image {
@@ -230,7 +257,8 @@ ul {
 
 .btn:hover, 
 .btn:active, 
-.btn:focus {
+.btn:focus,
+.btn--institutional {
   /*desta forma, faz um seletor que funcionará um mesmo código para todos eles, ou seja, para mais de um caso, selecionando vários elementos ou classes de um HTML, separando por vírgula*/
   border-color: var(--color-primary);
   /*define a cor da borda quando passar o mouse por cima*/
@@ -239,3 +267,117 @@ ul {
   color: #fff;
   /*define a cor do texto quando passar o mouse por cima, que neste caso, como o background ficará amarelo, o texto precisa alterar para branco, para viabilizar a leitura*/
 }
+
+#counter {
+  /*atribuirá propriedades ao seletor de ID counter*/
+  background-color: var(--color-primary);
+  /*define a cor do background para o default do projeto*/
+  color: #fff;
+  /*define a cor do texto*/
+  text-transform: uppercase;
+  /*define que o texto seja em letra maiúscula*/
+}
+
+.counter__container {
+  /*atribuirá propriedades ao seletor de classe em questão*/
+  display: grid;
+  /*fará a quebra do texto para baixo, ao invés de alinhamento na horizontal - precisa definir o número de colunas*/
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /*fará a divisão em um número específico de colunas - colocando uma fração para cada, ele entenderá que é para distribuir igualmente as colunas naquele trecho - a função repeat exige como primeiro dado o número de repetições e como segundo dado a fração para cada trecho - acrescentamos ainda a função minmax para definir que cada trecho deve se apresentar em no mínimo 300px e no máximo 1fr*/
+  place-items: center;
+  /*funciona como justify-itens e aligh-itens, afetando horizontalmente e verticalmente a posição dos elementos*/
+  padding: 4.375rem 1rem;
+  /*definirá o espaçamento entre o texto e os limites superiores e inferiores do container - no projeto, por padrão tem 70px, ou seja, 70/16 = 4.375rem e colocado 1rem para a esquerda e direita*/
+}
+
+.counter__container h3 {
+  /*para aplicar propriedades para somente os h3 que estão dentro dessa classe*/
+  font-size: 2.1875rem;
+  /*define o tamanho da fonte, como são 35px em projeto, então, 35/16 = 2.1875rem*/
+}
+
+.counter__container h3 small {
+  /*para aplicar propriedades para somente os <small> que estão dentro desta tag*/
+  display: block;
+  /*define a quebra de linha entre os elementos*/
+  font-size: 1.25rem;
+  /*define o tamanho da fonte, como são 20px em projeto, então 20/16 = 1.25rem*/
+}
+
+.institutional {
+  /*aplicará propriedades para a classe institutional*/
+  display: grid;
+  /*fará a quebra do texto para baixo, ao invés de alinhamento na horizontal - precisa definir o número de colunas*/
+  grid-template-columns: auto auto;
+  /*fará a divisão em um número específico de colunas - colocando uma fração para cada, ele entenderá que é para distribuir proporcionalmente as colunas naquele trecho - usando automático, ele usará o espaço disponível para a imagem e deixará um espaço com respiro maior para o nosso texto, ao invés de forçarmos isso, ficando mais harmonioso, deixando o navegador calcular quanto ele teria que aplicar.*/
+  gap: 3.125rem;
+  /*define o espaçamento entre os elementos*/
+  align-items: center;
+  /*fará com que os elementos fiquem alinhados ao centro - no projeto são 50px, portanto, 50/16 = 3.125rem*/
+  padding: 4.375rem 0;
+  /*definirá o espaçamento entre o conteúdo e os limites superiores e inferiores do container - no projeto, por padrão tem 70px, ou seja, 70/16 = 4.375rem*/
+}
+
+.institutional__image {
+  /*aplicará as propriedades para a classe em questão (primeira caixa - imagem)*/
+  max-width: 550px;
+  /*toda vez que estou definindo uma largura máxima, posso definí-la em pixels*/
+}
+
+.institutional__copy {
+  /*aplicará as propriedades para a classe em questão (segunda caixa - texto)*/
+  padding: 0 1.875rem 0 0;
+  /*definirá o espaçamento entre o conteúdo e os limites superiores e inferiores do container como zero e o espaçamento entre o conteúdo e os limites da esquerda e direita do projeto - no projeto, por padrão, tem 30px, ou seja, 30/16 = 1.875rem */
+}
+
+.institutional__copy h6 {
+  /*aplicará as propriedades para os elementos h6 contidos nesta classe*/
+  font-size: 0.875rem;
+  /*definirá o tamanho da fonte conforme especificado em projeto, que no caso é 14px, ou seja, 14/16=0.875rem*/
+  font-weight: 400;
+  /*definirá o peso da fonte (medium)*/
+  letter-spacing: 0.1rem;
+  /*definirá o espaçamento entre as letras - no projeto, seria de 1px, ou seja, 1/16 = 0.0625rem, mas arredondaremos para 0.1rem*/
+  text-transform: uppercase;
+  /*definirá a formatação em caixa alta para o texto*/
+  margin: 0;
+  /*definirá a margem do elemento para zero*/
+
+}
+
+.institutional__copy h4 {
+  /*aplicará as propriedades para os elementos h4 contidos nesta classe*/
+  font-size: 1.5625rem;
+  /*definirá o tamanho da fonte conforme especificado em projeto, que no caso é 25px, ou seja, 25/16=1.5625rem*/
+  /*por default o h4 já recebe o peso "bold", então, não é preciso estilizar o peso da fonte*/
+  margin-top: 1rem;
+  /*definirá a margem do topo deste elemento para 16px, conforme projeto, ou seja, 1rem*/
+}
+
+.institutional p {
+  /*aplicará as propriedades para o elemento <p> contido nesta classe*/
+  font-family: 'Roboto', sans-serif;
+  /*definirá a fonte Roboto como principal para este elemento, e uma segunda opção de carregamento, como a sans-serif*/
+  font-size: 1.0625rem;
+  /*definirá o tamanho da fonte conforme especificado em projeto, que no caso é 17px, ou seja, 17/16=1.0625rem*/
+  line-height: 1.6875rem;
+  /*define a altura de linha, para que o espaçamento entre as palavras fique identico ao projeto, que neste caso é 27px, ou seja, 27/16=1.6875rem*/
+  /* margin-bottom: 0; */
+  /*primeiro ele zera a margem de baixo e logo na sequência inclui o novo valor de margem, para mostrar como o efeito em cascata funciona*/
+  margin-bottom: 2.5rem;
+  /*define a margem de baixo para 40px, ou seja, 40/16=2.5rem, conforme projeto*/
+}
+
+.btn--institutional:hover {
+  /*aplicará as propriedades para o botão*/
+  color: var(--color-copy);
+  /*puxará a cor do texto durante o efeito hover para a variável definida no root*/
+  border-color: var(--color-primary);
+  /*definirá que a cor da borda será a cor da variável amarela durante o efeito hover*/
+  background: unset;
+  /*definirá que não haverá background durante o efeito hover*/
+  box-shadow: 0 1rem 1rem #0006;
+  /*definirá a propriedade de efeito de flutuação do botão em relação a tela - a primeira variável é onde a sombra ficará (0 - fica abaixo do botão), a segunda e terceira variável é para jogar a sombra para quais lados e a dimensão dela, ou seja, a posição onde a sombra ficará, e o quarto elemento (se utilizado com 4 dígitos e o número 6 no final) é o que trará a transparência na cor */
+}
+
+
