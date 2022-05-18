@@ -314,7 +314,7 @@ ul {
   /*define o espaçamento entre os elementos*/
   align-items: center;
   /*fará com que os elementos fiquem alinhados ao centro - no projeto são 50px, portanto, 50/16 = 3.125rem*/
-  padding: 4.375rem 0;
+  padding: 4.375rem;
   /*definirá o espaçamento entre o conteúdo e os limites superiores e inferiores do container - no projeto, por padrão tem 70px, ou seja, 70/16 = 4.375rem*/
 }
 
@@ -380,4 +380,84 @@ ul {
   /*definirá a propriedade de efeito de flutuação do botão em relação a tela - a primeira variável é onde a sombra ficará (0 - fica abaixo do botão), a segunda e terceira variável é para jogar a sombra para quais lados e a dimensão dela, ou seja, a posição onde a sombra ficará, e o quarto elemento (se utilizado com 4 dígitos e o número 6 no final) é o que trará a transparência na cor */
 }
 
+.quote {
+  /*as propriedades serão aplicadas para a seção com classe quote*/
+  background-image: url(./images/parallax.jpg);
+  /*faz a importação da imagem salva na pasta*/
+  background-attachment: fixed;
+  /*define o efeito do parallax acontecendo, que é a tela passando pela imagem*/
+  background-repeat: no-repeat;
+  /*definirá que não haja a repetição do background durante o efeito*/
+  background-size: cover;
+  /*definirá que o nosso background ocupará mais espaço, ou seja, cobrirá a região*/
+  background-position: center;
+  /*definirá que o nosso background ficará centralizado na tela*/
+}
 
+.quote__container {
+  /*aplicará as propriedades no container que está contido na seção quote*/
+  display: grid;
+  /*definirá a exibição dos elementos como tabela*/
+  align-items: center;
+  /*definirá o alinhamento dos itens no centro*/
+  justify-items: end;
+  /*definirá o alinhamento da caixa na direita*/
+  min-height: 80vh;
+  /*define a altura mínima de visualização da imagem - view height*/
+}
+
+.quote__copy {
+  /*aplicará as propriedades para a classe em questão*/
+  background-color: #fff;
+  /*definirá a cor branca para o background da caixa como é em projeto*/
+  padding: 5.625rem 4.375rem;
+  /*define o tamanho dinâmico da caixa, por conta do espaçamento entre o texto e as bordas da caixa, sendo que o primeiro valor é para cima e para baixo (90px/16px=5.625rem) e o segundo valor é para esquerda e direita (70px/16px=4.375rem)*/
+}
+
+.quote__copy h6 {
+  /*aplicará as propriedades para o elemento h6 dentro do quote__copy*/
+  font-size: 0.9375rem;
+  /*define o tamanho da fonte, que no caso é (15px/16px=0.9375rem)*/
+  font-weight: 400;
+  /*define o peso da fonte, que no caso do projeto é regular*/
+  letter-spacing: 0.1875rem;
+  /*define o espaçamento entre as letras, que em projeto é de (3px/16px=0.1875rem)*/
+  line-height: 1.4375rem;
+  /*define a altura entre linhas, que em projeto é de (23px/16px=1.4375rem)*/
+  max-width: 53ch;
+  /*define a largura de um elemento que tenha texto, a partir de um limite de caracteres para haver a quebra de linha forçada - ideal para aplicar nos parágrafos do site*/
+  text-transform: uppercase;
+  /*define as letras para ficarem todas em caixa alta*/
+  margin: 0;
+  /*remove a margem do elemento h6*/
+}
+
+.quote__copy h2 {
+  /*aplicará as propriedades para o elemento h2 dentro do quote__copy*/  
+  font-size: 5rem;
+  /*define o tamanho da fonte, que no caso é (80px/16px=5rem) - o font-weight está certo, porque a formatação do h2 já é bold por padrão*/
+  line-height: 5rem;
+  /*define a altura entre linhas, que em projeto é de (80px/16px=5rem)*/
+  text-transform: uppercase;
+  /*define as letras para ficarem todas em caixa alta*/
+  letter-spacing: -0.1875rem;
+  /*define o espaçamento entre as letras, que em projeto é de (-3px/16px=-0.1875rem)*/
+  margin: 1.875rem 0;
+  /*define a margem superior/inferior do elemento h2 para se aproximar do resultado esperado em projeto (30px/16px=1.875rem) - em projeto, seria 40px, mas não leva em consideração o tamanho da própria fonte, então diminuímos um pouco para ficar em escala mais aproximada e definimos margem 0 para esquerda e direita pois não há*/
+}
+
+.quote__copy h2 span {
+  /*aplicará as propriedades para o elemento span do h2 dentro do quote__copy*/
+  display: block;
+  /*define a quebra de linha dos elementos de texto, visto que no HTML já foi preparado para fazer desta forma, através do display: block*/
+}
+
+.btn--quote {
+  /*aplicará as configurações no botão da seção quote*/
+  color:var(--color-copy);
+  /*definirá a cor do texto para a variável já estabelecida*/
+  border-color: var(--color-copy);
+  /*definirá a cor de borda para a variável já estabelecida*/
+  background: unset;
+  /*definirá que não haverá nenhum background dentro do botão*/
+}
