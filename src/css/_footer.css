@@ -1,0 +1,160 @@
+/*são as configurações exclusivas do footer das páginas*/
+
+.footer {
+  /*aplicará as configurações de propriedade para o rodapé da página*/
+  background-color: #000;
+  /*definirá o background na cor preta*/
+  color: #fff;
+  /*definirá a cor de texto branca*/
+  text-align: center;
+  /*definirá um alinhamento do texto*/
+}
+
+.footer__container {
+  /*aplicará as configurações para o container contido no footer*/
+  display: grid;
+  /*definirá que poderei dividir este trecho em partes*/
+  grid-template-columns: repeat(3, auto);
+  /*definirá a separação automática de colunas, especificando que serão 3 e que elas serão divididas proporcionalmente pelo próprio navegador através do valor "auto"*/
+  align-items: center;
+  /*definirá que cada um dos itens seja alinhado ao centro*/
+  padding: 5.25rem 0 3.75rem 0;
+  /*definirá um pading de 84px/16px=5.25rem para cima, 0 para a direita, 60px/16px=3.75rem para baixo e 0 para a esquerda, em ordem*/
+}
+
+.footer .logo-studion {
+  /*aplicará as configurações exclusivamente para o logo da Studion localizado no rodapé - footer, pois se fizesse somente como .logo-studion chamaria outros itens do projeto que estão com esta mesma classe*/
+  justify-self: start;
+  /*definirá que ele mesmo se alinhará no começo, ou seja, à esquerda*/
+  margin: 0;
+  /*para remover a margem do elemento e permitir que o padding faça o efeito que precisa de separação dos elementos do footer com a seção acima*/
+}
+
+.footer__form {
+  /*definirá as configurações para o formulário do rodapé, este não precisa escopar como exclusividade, pois ele já tem uma classe só para ele */
+  display: grid;
+  /*definirá que será uma tabela de 2 colunas*/
+  align-items: center;
+  /*definirá a posição dos elementos no centro*/
+  grid-template-columns: 9ch auto;
+  /*definirá que a primeira coluna terá como distância o valor de 12ch, ou seja, 12 caracteres - "receba news e", conforme o projeto prevê e a segunda coluna definida automaticamente*/
+  gap: 1.375rem;
+  /*definirá o espaçamento entre o label e o input/button, sendo que em projeto é 20px/16px=1.25rem*/
+}
+
+.footer__form label {
+  /*aplicará as configurações para o elemento label contido no formulário do rodapé*/
+  font-size: 0.875rem;
+  /*definirá a fonte para o texto do rótulo conforme projeto, 14px/16px=0.875rem*/
+  font-weight: 300;
+  /*definirá o peso da fonte, sendo Light, conforme em projeto*/
+  text-align: center;
+  /*definirá o alinhamento do texto no centro*/
+  line-height: 1rem;
+  /*definirá a altura de linha*/
+}
+
+.footer__email {
+  /*aplicará as configurações para o elemento fieldset contido no formulário do rodapé*/
+  display: grid;
+  /*aplicará a propriedade de colunas para os filhos (input e button)*/
+  grid-template-columns: auto 3.375rem;
+  /*aplicará o tamanho automático para o input e o tamanho de 54px/16px=3.375rem*/
+  /* width: 100%; */
+  /*para que ele ocupe todo o espaço disponível*/
+}
+
+.footer__form input {
+  /*aplicará somente para o input dentro do footer__form*/
+  background-color: var(--color-primary);
+  /*definirá a cor do background do input - campo de preenchimento do e-mail*/
+  border: unset;
+  /*remove a borda da caixa de e-mail*/
+  padding: 1rem;
+  /*define o padding espaçamento entre o texto e a caixa de 1rem para os lados, sendo 16px no projeto*/
+  font-size: 0.875rem;
+  /*definirá a fonte do texto, 14px/16px=0.875rem*/
+  font-weight: 700;
+  /*definirá o peso da fonte para Bold, conforme estipulado em projeto*/
+  text-transform: uppercase;
+  /*definirá o padrão de texto em caixa alta*/
+  color: #000;
+  /*definirá a cor de texto*/
+}
+
+.footer__form input::placeholder {
+  /*para aplicar exclusivamente no placeholder do input, a chamada é feita de forma diferente*/
+  color: #000;
+}
+
+.footer__form input:focus {
+  /*para aplicar exclusivamente no efeito focus do input, a chamada é feita de forma diferente*/
+  outline: unset;
+  /*removerá o efeito de focus, ou seja, quando clicar na caixa, aparecer uma borda*/
+}
+
+.footer__form button {
+  /*definirá as alterações para o botão padrão*/
+  cursor: pointer;
+  /*para indicar que este botão é clicável a partir da mãozinha do mouse*/
+  border: unset;
+  /*removerá a borda do botão*/
+  height: 100%;
+  /*definirá a altura da caixa do botão, para 100% do tamanho disponível para ele ocupar*/
+  transition: 0.3s all ease;
+  /*definirá a propriedade para transicionar entre um modo e outro para indicar que o botão é clicável*/
+}
+
+.footer__form button:hover {
+  /*definirá as alterações para o botão padrão quando passar o mouse por cima dele*/
+  color: #fff;
+  /*definirá a cor branca para o texto do botão*/
+  background-color: var(--color-copy);
+  /*definirá a cor de texto para o background do botão*/
+
+}
+
+.footer__social {
+  /*definirá as configurações para a parte dos ícones das redes sociais*/
+  justify-self: end;
+  /*definirá que os ícones estarão alinhados ao final da seção, ou seja, à direita*/
+}
+
+.footer__social a,
+.footer__social a:visited,
+.footer__social a:active {
+  /*definirá a propriedade para o elemento de link do footer__social para todas as propriedades de uso do botão*/
+  color: #fff;
+  /*definirá a cor branca para a propriedade de link dos botões*/
+  margin-left: 0.2rem;
+  /*definirá o espaçamento entre os ícones das redes sociais*/
+}
+
+.footer__social a .fa-twitter,
+.footer__social a:visited .fa-twitter,
+.footer__social a:active .fa-twitter {
+  /*definirá a propriedade para o elemento de link do twitter no footer__social para todas as propriedades de uso do botão*/
+  color: #000;
+  /*definirá a cor branca para a propriedade de link dos botões*/
+}
+
+.footer hr {
+  /*aplicará as configurações para o elemento hr contido no footer*/
+  border-color: #fff4;
+  /*definirá a cor da borda (linha) que irá separar o rodapé sendo que o número 4 representa a transparência*/
+  margin: 0;
+  /*definirá que irá zerar a margem do elemento hr (linha quebrando as seções)*/
+
+}
+
+.footer p {
+  /*aplicará as configurações para o elemento "p" - parágrafo do footer*/
+  text-align: center;
+  /*alinhará o texto no centro da seção do footer*/
+  font-size: 0.875rem;
+  /*definirá o tamanho da fonte baseado em projeto, 14px/16px=0.875rem*/
+  font-weight: 300;
+  /*definirá o peso da fonte baseado em projeto, sendo a opção light, ou seja, 300*/
+  margin: 2.5rem 0;
+  /*definirá a margem baseado em projeto, sendo 40px/16px=2.5rem para cima e para baixo e 0 para esquerda e direita*/
+}

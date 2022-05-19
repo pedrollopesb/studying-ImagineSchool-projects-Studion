@@ -1,0 +1,81 @@
+/*a base é o que o site e as páginas usam como padrão*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  /*nessa região utilizamos a definição de fontes no seletor próprio para o root, ou seja, onde estão as informações próprias para o site*/
+  /*16px = 1rem - é o que o navegador aplica por padrão na formatação do site*/
+  color: var(--color-copy);
+  /*estabelecerá que a cor padrão de texto é nesse tom de cinza*/
+}
+
+body {
+  /*aplicará as alterações em toda a estrutura do body*/
+  margin: 0;
+  /*remove a margem de toda a estrutura do body*/
+  /* padding-top: 7.75rem; */
+  /*fazendo isso, conseguiremos jogar o conteúdo para baixo, para que não fique abaixo da barra de navegação, sendo que 7,75rem é a altura definida da barra de navegação*/
+}
+
+header,
+main,
+footer {
+  /*afetaremos os três elementos semânticos que temos dentro do body*/
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* para ele ocultar qualquer conteúdo de X que vá além do que ele deveria */
+}
+
+ul {
+  /*aplicará as alterações em toda a estrutura da lista*/
+  display: flex;
+  /* display: flex; - coloca os itens da lista lado a lado, na horizontal, ao invés de estarem organizados na vertical, como é por padrão o display: block;*/
+  list-style: none;
+  /* configuração para remoção das bolinhas que ficam, quando se está configurando uma lista*/
+  padding-left: 0;
+  /*removendo o padding à esquerda da caixa da lista, que através do inspecionar, mostrava um espaço de "margem"*/
+}
+
+.container {
+  /*aplicará as alterações em toda a estrutura do container*/
+  max-width: 1140px;
+  /*único lugar em que usaria uma dimensão em pixels - para definir um tamanho máximo para garantir qu enosso conteúdo fique no meio como em nosso design*/
+  margin: 0 auto;
+  /*para não aplicar margem para cima e para baixo e deixar para o navegador definir as margens para esquerda e direita*/
+}
+
+.logo-studion {
+  /*aplicará as configurações no título studion*/
+  font-size: 2.375rem;
+  /*definindo o tamanho da fonte, sendo que no projeto são 38px ou seja 38px/16px = 2,375rem*/
+  font-weight: 900;
+  /*definindo o peso da fonte - black*/
+  line-height: 1ch;
+  /*definindo a altura da linha, sendo ch a unidade de medida relativa ao tamanho da altura do glifo 0 da fonte, como base de unidade - boa para lidar com espaçamento de texto*/
+  text-transform: uppercase;
+  /*para deixar todo o texto em caixa alta*/
+  text-align: right;
+  /*para alinhar o texto da logo à direita*/
+}
+
+.logo-studion__subtitle {
+  /*aplicará as configurações no subtítulo eventos*/
+  display: block;
+  /*aplicará a quebra de linha*/
+  font-size: 0.875rem;
+  /*definindo o tamanho da fonte - como no projeto são 14px, significa que dividimos 14px/16px, já que 1rem = 16px, obtendo assim 0,875rem*/
+  font-weight: 300;
+  /*definindo o peso da fonte - regular*/
+}
+
+.logo-studion a {
+  /*aplicará configurações ao elemento "a" da logo studion da navbar*/
+  text-decoration: none;
+  /*fará com que sumirá a linha do sublinhado gerado pelo link de acesso a homepage clicando na logo*/
+  color: #fff;
+  /*definirá a cor branca para a parte do STUDI e EVENTOS*/
+}

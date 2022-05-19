@@ -1,0 +1,6 @@
+/*onde guardaremos as classes para controlar como algo é mostrado*/
+
+.copy--primary {
+  /*aplicará a coloração na classe da logo, conforme o projeto*/
+  color: var(--color-primary)
+}

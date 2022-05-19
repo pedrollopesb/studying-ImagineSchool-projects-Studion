@@ -1,0 +1,68 @@
+/*reunirá as configurações base dos botões aplicados nas páginas*/
+
+.btn {
+  /*aplicará as configurações para o botão (saiba mais)*/
+  cursor: pointer;
+  /*fará com que o cursor vire a "mãozinha" quando passar por cima do botão, para ver que ele é clicável e chamar a atenção do usuário*/
+  padding: 1rem 2.50rem;
+  /*aplicará um padding (distancia entre o texto e a caixa) de 20px cima/baixo, ou seja, 20/16 = 1.25rem e 40px esquerda/direita, ou seja, 40/16 = 2.50rem, porém, no caso da altura, vamos deixar em 1rem, para ficar mais próximo do efeito desejado de pílula, mais achatado*/
+  border: 0.125rem solid #fff;
+  /*definirá as configurações da borda do botão - largura de linha, estilo de linha, cor. No projeto a borda tem 2px, ou seja, 2/16 = 0.125rem. Foi definido o estilo de linha sólido e a cor branca em hexadecimal como padrão de escrita*/
+  border-radius: 5rem;
+  /*aplicará o arredondamento das bordas do botão - no projeto, o valor é de 26px, ou seja, 26/16 = 1.625rem - porém, este valor não chega no resultado esperado, então, colocamos um valor maior que ele, para garantir o formato de pílula no botão*/
+  color: var(--color-primary);
+  /*definirá a cor padrão amarela do layout para o texto do botão*/
+  background: unset;
+  /*toda vez que eu quiser resetar para o valor mais neutro possível de uma propriedade, devo usar o valor "unset" - serve para remover o background do botão*/
+  font-size: 0.9375rem;
+  /*define o tamanho de fonte de texto - no projeto consta 15px, ou seja, 15/16 = 0.9375rem */
+  font-weight: 700;
+  /*define o peso da fonte - no projeto é Bold, ou seja, o valor de 700*/
+  text-transform: uppercase;
+  /*define que o texto fique em caixa alta*/
+  transition: 0.3s all ease;
+  /*define propriedade de animações entre as mudanças de propriedade, dando mais dinamismo e ficando mais interessante visualmente - consigo estipular o tempo que levará pra fazer a transição entre o valor de uma propriedade para outra - a cor por exemplo (0.5s), o que será alterado nessa transição (all) e a curva de animação (ease) - a mais balanceada*/
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn--institutional,
+.btn--contact {
+  /*desta forma, faz um seletor que funcionará um mesmo código para todos eles, ou seja, para mais de um caso, selecionando vários elementos ou classes de um HTML, separando por vírgula*/
+  border-color: var(--color-primary);
+  /*define a cor da borda quando passar o mouse por cima*/
+  background-color: var(--color-primary);
+  /*define a cor do brackground quando passar o mouse por cima*/
+  color: #fff;
+  /*define a cor do texto quando passar o mouse por cima, que neste caso, como o background ficará amarelo, o texto precisa alterar para branco, para viabilizar a leitura*/
+}
+
+.btn--institutional:hover,
+.btn--contact:hover {
+  /*aplicará as propriedades de modificador para o botão*/
+  color: var(--color-copy);
+  /*puxará a cor do texto durante o efeito hover para a variável definida no root*/
+  border-color: var(--color-primary);
+  /*definirá que a cor da borda será a cor da variável amarela durante o efeito hover*/
+  background: unset;
+  /*definirá que não haverá background durante o efeito hover*/
+  box-shadow: 0 1rem 1rem #0006;
+  /*definirá a propriedade de efeito de flutuação do botão em relação a tela - a primeira variável é onde a sombra ficará (0 - fica abaixo do botão), a segunda e terceira variável é para jogar a sombra para quais lados e a dimensão dela, ou seja, a posição onde a sombra ficará, e o quarto elemento (se utilizado com 4 dígitos e o número 6 no final) é o que trará a transparência na cor */
+}
+
+.btn--contact:hover {
+  /*aplicará as configurações para o botão da página contact, quando passar o mouse por cima*/
+  color: #fff
+  /*fará com que quando passar o mouse em cima, a cor do texto do botão continuará branca*/
+}
+
+.btn--quote {
+  /*aplicará as configurações no botão da seção quote*/
+  color: var(--color-copy);
+  /*definirá a cor do texto para a variável já estabelecida*/
+  border-color: var(--color-copy);
+  /*definirá a cor de borda para a variável já estabelecida*/
+  background: unset;
+  /*definirá que não haverá nenhum background dentro do botão*/
+}
