@@ -1,0 +1,62 @@
+/*aplicará as configurações para a seção "hero" de cada página além da home*/
+
+.hero {
+  /*aplicará as configurações para a classe hero, contida no header*/
+  position: relative;
+  /*precisamos colocar ele fora da renderização padrão do HTML, ou seja, vazando a div, sendo ele quem "contém" o conteúdo do hero_background*/
+  height: 34.625rem;
+  /*definirá que o nossa seção hero terá 554px/16px=34.625rem, conforme estipulado em projeto*/
+}
+
+.hero__background {
+  /*aplicará as configurações para o background contido na div da classe hero*/
+  position: absolute;
+  /*permitirá que ele vaze a div do hero*/
+  z-index: -1;
+  /*definirá a camada onde o texto está aparecendo*/
+  object-fit: contain;
+  /*propriedade para conter a iamgem*/
+  object-position: center;
+  /*propriedade para centralizar a imagem*/
+}
+
+.hero__copy {
+  /*aplicará as configurações para o texto contido na div da classe container hero__container*/
+  position: absolute;
+  /*para movimentar essa div em relação ao relative*/
+  bottom: 0;
+  /*fará com que ele esteja posicionado a 0 em relação à parte inferior*/
+  right: 0rem;
+  /*fará com que ele esteja posicionado a 0 em relação à direita*/
+  width: 50vw;
+  /*fará com que ele ocupe metade da nossa tela, ou seja, 50 view width*/
+  padding: 7rem 1.875rem;
+  /*definirá um espaçamento entre o conteúdo da div e a caixa de 112px/16px=7rem para cima e para baixo e 30px/16px=1.875rem para esquerda e para direita, conforme projeto*/
+}
+
+.hero__copy h2 {
+  /*aplicará as configurações para o seletor h2 - texto do hero__copy contido na div*/
+  margin: 0;
+  /*definirá que a margem seja anulada*/
+  margin-bottom: 3rem;
+  /*definirá uma margem inferior de 64px/16px=4rem, conforme projeto, menos 1rem que já é a distância natural entre os dois elementos, totalizando 3rem*/
+  font-size: 7.5rem;
+  /*definirá o tamanho da fonte baseado em projeto, 120px/16px=7.5rem*/
+  line-height: 7.5rem;
+  /*definirá a altura da linha baseada em projeto, 120px/16px=7.5rem*/
+  letter-spacing: -0.3125rem;
+  /*definirá o espaçamento entre letras, como em projeto, ou seja, -5px/16px=-0.3125rem*/
+  color: var(--color-primary);
+  /*aplicará a cor da variável gravada no root*/
+}
+
+.hero__copy p {
+  /*aplicará as configurações para o seletor p - parágrafo do hero__copy contido na div*/
+  margin: 0;
+  /*irá zerar a margem deste elemento*/
+  font-size: 0.9375rem;
+  /*definirá o tamanho da fonte baseado em projeto, 15px/16px=0.9375rem*/
+  line-height: 1.875rem;
+  /*definirá a altura da linha baseada em projeto, 30px/16px=1.875rem*/
+  color: var(--color-copy--alt);
+}

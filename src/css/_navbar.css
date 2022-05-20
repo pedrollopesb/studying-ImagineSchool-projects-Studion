@@ -1,0 +1,75 @@
+/*reunirá todas as configurações da navbar que é comum a todas as páginas*/
+
+.navbar {
+  /*aplicará as alterações em toda a estrutura da barra de navegação*/
+  position: absolute;
+  /* position: fixed; - Essa propriedade fará com que a barra de navegação fique fixa na tela, conforme o usuário vai utilizando a barra de rolagem. position:absolute; - fará com que a barra fique apenas no topo da tela, enquanto o usuário deslizar a página para baixo, ela não acompanha*/
+  z-index: 1;
+  /*define a prioridade de um elemento, para que ele fique acima dos demais, ou seja, a navbar ficará por cima dos elementos, mesmo que eles tenham uma propriedade position absolute ou relative*/
+  top: 0;
+  left: 0;
+  /*remove as margens superior e esquerdas da barra de navegação*/
+  width: 100%;
+  /*para ocupar 100% da largura de tela*/
+  /* background-color: #000; */
+  color: #fff;
+  /* na formatação hexadecimal de cor, o primeiro número seria referente ao vermelho, o segundo de verde, o terceiro o quanto de azul e o quarto número indicaria a transparência do objeto - 0 - F. */
+  /* color: #fff - resulta na cor branca e a propriedade color é referente ao texto */
+}
+
+.navbar__container {
+  /*aplicará as alterações em toda a estrutura do container da barra de navegação*/
+  display: grid;
+  /*in line - quando for texto / block - elemento que for causar quebra de linha, mas que podemos controlar este elemento*/
+  grid-template-columns: 1fr 9fr;
+  /*essa propriedade define que você deixa uma fração do espaço para a logo studion e o restante, as nova frações para a lista*/
+  align-items: center;
+  /*essa propriedade fará com que toda essa linha de itens será alinhada no centro na vertical*/
+
+  width: 100vw;
+  /* width: 100%; ou width: 100vw; ajusta a largura para 100% da página*/
+  height: 7.75rem;
+  /* definindo a altura da nossa barra de navegação para ficar num tamanho fixo mais previsível*/
+  padding: 0 1rem;
+  /*este valor de padding aplicará diretamente na barra de navageção - se passar só um valor aqui ele aplicará o mesmo para todos os lados - se pasar mais de um valor o primeiro aplica para cima e para baixo (0) e o segundo para esquerda e para a direita (1)*/
+}
+
+.navbar__links {
+  /*aplicará as alterações em todos os links da barra de navegação*/
+  justify-self: end;
+  /*propriedade de alinhamento para itens que estão dentro de um grid - com a subpropriedade end fará com que a barra de navegação se alinhará a direita */
+}
+
+.navbar__links li {
+  /*aplicará as alterações em todos os itens da lista da barra de navegação*/
+  font-size: 0.875rem;
+  /*no projeto base a fonte das letras da barra de navegação tÊm 14px, ou seja 14/16 = 0,875rem*/
+  margin-right: 3rem;
+  /*desta forma, conseguimos separar os itens da lista com um espaçamento proporcional entre elas*/
+  /*se quiséssemos utilizar um valor correspondente a 10px, porém, em rem, teríamos que dividir 10/16, visto que 1rem equivale a 16px, o que resultaria em 0,625, sendo este valor agora convertido em rem */
+  /*como o projeto define que são 48 pixels de distância entre cada link da barra da navegação, 48/3 = 3 rem*/
+  text-transform: uppercase;
+  /*essa propriedade transforma todo o texto em caixa alta para estilização do texto*/
+}
+
+.navbar__links a {
+    /*Nesta seção, ao utilizar o seletor "a", fará com que todas as tags "a" dentro desta classe, sofrerão as alterações aplicadas nesta seção*/
+  font-weight: 300;
+  /*esta propriedade define o peso da fonte - light*/
+  color: #fff;
+  /*esta propriedade e seu valor aplicarão a cor branca ao texto*/
+  text-decoration: none;
+  /*esta propriedade e seu valor farão com que a barra que aparece embaixo do link suma, o sublinhado*/
+}
+
+.navbar__links a.active {
+  /*quando ele tiver uma classe active junto dele, eu quero que  acor dele seja a cor da nossa variável amarela, só pra indicar pro usuário onde ele está*/
+  color: var(--color-primary);
+  /*define a cor amarela para o seletor em questão*/
+}
+
+.navbar__links a:hover {
+  /*É um estado em que quando eu passar o mouse em cima dos elementos de tag "a", algo deverá acontecer*/
+  color: var(--color-primary);
+  /*Ao passar o mouse por cima da barra de navegação, cada item assumirá essa cor. A função var chama a variável cor cadastrada na seção root*/
+}

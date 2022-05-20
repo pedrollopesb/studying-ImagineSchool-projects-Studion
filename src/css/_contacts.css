@@ -1,0 +1,137 @@
+/*são as configurações exclusivas da página contatos*/
+
+.contact {
+  /*aplicará as configurações para a seção contact*/
+  display: grid;
+  /*definirá o padrão de colunas para essa seção*/
+  grid-template-columns: 1fr 1fr;
+  /*para dividir em duas partes iguais, ou seja, 50% para cada lado*/
+}
+
+.contact h3 {
+  /*aplicará as configurações para todos os elementos h3 contidos na classe contact*/
+  margin: 0;
+  /*removerá a margem deles*/
+  margin-bottom: 1.875rem;
+  /*definirá que a margem inferior será de 30px/16px=1.875rem, conforme projeto*/
+  font-size: 1.5625rem;
+  /*definirá o tamanho da fonte, 25px/16px=1.5625rem*/
+}
+
+.contact__info h3:nth-of-type(2) {
+/*aplicará as configurações abaixo apenas para o elemento h3 do contact__info, e usando a propriedade nth-of-type(2) com o valor 2, ele aplicará apenas no segundo elemento*/
+margin-top: 3.75rem;
+/*definirá a margem superior conforme projeto, 60px/16px=3.75rem*/
+}
+
+.contact__info,
+.contact__form {
+  /*aplicará as configurações tanto para o contact__info como para o contact__form*/
+  padding: 4rem 0;
+  /*definirá a distância entre o conteúdo da caixa e a caixa, de 64px/16px=4rem para cima e para baixo, conforme projeto e 0 para os lados, pois abaixo está sendo sobrescrito pelo efeito em cascata*/
+}
+
+.contact__info i {
+  /*aplicará as configurações para os ícones contidos nessa seção*/
+  font-size: 1.5rem;
+  /*por se tratar de uma fonte de ícones, nós temos controle sobre eles, portanto, analisando em projeto, 24px/16px=1.5rem*/
+  color: var(--color-primary);
+}
+
+.contact__info span {
+  /*aplicará as configurações para o conteúdo do span contido nessa seção*/
+  display: grid;
+  /*definirá o padrão de tabela*/
+  grid-template-columns: 1.5rem auto;
+  /*definirá a proporção de 1.5rem do ícone e auto para o segundo elemento, que no caso seria o número de telefone*/
+  gap: 0.625rem;
+  /*acrescentará um espaçamento entre os ícones os números de telefone/endereço, sendo 10px/16px=0.625rem*/
+  align-items: center;
+  /*alinhará os itens horizontalmente na linha, ou seja, os ícones e os números de telefone*/
+  font-family: "Roboto";
+  font-weight: 700;
+  /*definirá o peso da fonte, para bold, com valor de 700. O tamanho da fonte, como é 17px/16px=1.0625rem, já é praticamente o valor padrão colocado de 1rem, então não será necessário alterar*/
+  line-height: 1.6875rem;
+  /*definirá a altura de linha da fonte, 27px/16px=1.6875rem*/
+}
+
+.contact__info__container,
+.contact__form__container {
+  /*aplicará as configurações para ambas as classes*/
+  width: 570px;
+  /*definirá a largura de 540px, sendo a metade do espaço em tela disponível de 1080px, como foi definido anteriormente no .container localizado no _base.css*/
+}
+
+.contact__info__container {
+  /*aplicará as configurações para o container contido na seção em questão*/
+  float: right;
+  /*definirá que ele irá flutuar até a direita dessa caixa*/
+  padding-right: 7.125rem;
+  /*definirá um espaçamento entre o conteúdo e a caixa de 114px/16px=7.125rem*/
+}
+
+.contact__form__container {
+  /*aplicará as configurações para o container contido na seção em questão*/
+  padding-left: 7.125rem;
+  /*definirá um espaçamento entre o conteúdo e a caixa de 114px/16px=7.125rem*/
+}
+
+.contact__form {
+  /*aplicará as configurações para a seção em questão*/
+  background-color: #000;
+  /*definirá a cor de background para preta, conforme projeto*/
+  color: #fff;
+  /*definirá a cor de texto da parte do formulário para branca, conforme projeto*/
+}
+
+.contact__form label,
+.contact__form input {
+  /*aplicará as configurações para o elemento span contido nessa seção*/
+  display: block;
+  /*fará com que haja a quebra de linha entre os elementos de texto*/
+}
+
+.contact__form label {
+  /*aplicará as configurações para o elemento label contido nessa seção*/
+  font-weight: 700;
+  /*definirá o peso para a fonte, sendo o padrão de projeto Bold*/
+}
+
+.contact__form input {
+  /*aplicará as configurações para o elemento input contido nessa seção*/
+  width: 100%;
+  /*definirá a largura de 100% do tamanho da div*/
+  margin-bottom: 1.875rem;
+  /*definirá uma margem inferior para separar os campos de input de 30px/16px=1.875rem, conforme o projeto*/
+  padding: 0.5rem 0;
+  /*definirá o espaçamento entre o texto e as caixas de 0.5rem para cima e para baixo e 0 para a esquerda e direita*/
+  background: unset;
+  /*definirá que o background dele será removido*/
+  border: unset;
+  /*definirá que ele não terá a borda padrão*/
+  border-bottom: 0.06rem solid #fff;
+  /*definirá que ele terá uma borda inferior, de 1px/16=0.06rem, sólida e na cor branca*/
+  color: #fff;
+  /*definirá a cor de fonte para branca*/
+  font-size: 1.5rem;
+  /*definido por nós em projeto o tamanho da fonte preenchendo o campo input, pois não tem essa referência no projeto*/
+}
+
+.contact__form input:focus {
+  /*aplicará as configurações para o elemento de focus no input contido nesta seção, ou seja, quando clicar sobre a caixa de texto - passa o focus como pseudo-seletor*/
+  outline: unset;
+  /*remove a linah de contorno do input*/
+}
+
+.contact__form button {
+  /*aplicará as configurações para o elemento botão contido nessa seção*/
+  float: right;
+  /*definirá que ele irá flutuar até a direita dessa caixa*/
+}
+
+.maps,
+.maps iframe {
+  /*aplicará as configurações para o elemento iframe contido nessa seção do mapa*/
+  height: 36.5rem;
+  /*definirá a altura do mapa, que em projeto é de 584px/16px=36.5rem*/
+}

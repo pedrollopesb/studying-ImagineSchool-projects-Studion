@@ -1,0 +1,12 @@
+/*reunirá as configurações base das variáveis aplicadas nas páginas*/
+
+:root {
+  --color-copy: #333;
+  /*inclusão de uma variável de cor*/
+  --color-copy--alt: #ccc;
+  --color-primary: #ffc500;
+    /*inclusão de uma variável de cor*/
+  --default-padding: 1rem;
+  /*estabelecerá que o padding padrão será de 1 rem ou 16px*/
+  /*precisa ser assim pois a ordem em cascata faz com que seja aplicada e definida a fonte e depois o padding de 1rem, baseado no tamanho da fonte de 16px. Se fosse ao contrário, o font-size sobrescreveria a informação de 1rem, e ele se basearia nos novos valores de font-size */
+}

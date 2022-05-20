@@ -1,0 +1,253 @@
+/*são as configurações exclusivas da página home*/
+
+#slider {
+  /*aplicará as configurações no slider contido no cabeçalho (header)*/
+  background-color: #000;
+  color: #fff;
+  /*por convenção e boas práticas de escrita, é comum utilizar as cores en hexadecimal, ao invés de utilizar seus respectivos nomes*/
+
+  /*OUTRA OPÇÃO De APLICAÇÃO DO BACKGROUND
+  
+  background-image: url(./images/banner.jpg);
+  colocar uma imagem como background deste elemento
+  sempre colocar o ./ pois ele simboloza a pasta onde está o nosso style.css, pesquisando se tem uma pasta images e um arquivo banner.jpg
+
+  background-size: cover;
+  garantir que essa imagem será exibida por inteira, de uma forma que não distorça a imagem
+
+  background-repeat: no-repeat;
+  define que o background não se repita, ficando uma única imagem
+
+  background-position: center;
+  define o posicionamento do backgroud, para que o centro da imagem se aplique no centro do elemento*/
+}
+
+.slide {
+  /*aplicará as configurações tanto na imagem quanto no texto do cabeçalho*/
+  position: relative;
+  /*isso fará com que o filho fique preso dentro do pai, ou seja, não deixará o slide__copy sairá para fora do elemento slide, ou seja, ir para baixo da nossa altura*/
+  height: 90vh;
+  /*aplicará a altura do slider baseado em 90 de visual height, ou seja, 90% da visualização de tela*/
+}
+
+.slide__background-image {
+  /*aplicará as configurações na imagem do background*/
+  width: 100%;
+  /*ocupa a largura inteira disponível*/
+  height: 100%;
+  /*ocupa a altura inteira disponível*/
+  object-fit: cover;
+  /*propriedade para cobrir a tela*/
+  object-position: center;
+  /*propriedade para centralizar a imagem*/
+}
+
+.slide__copy {
+  /*aplicará as configurações no texto do cabeçalho*/
+  position: absolute;
+  /*define a posição dos elementos de texto, neste caso - deixa ele ir para todo lugar da página - este é o elemento pai*/
+  top: 6.25rem;
+  /*define que ele ficará no topo, numa distância de 6.25rem a partir da barra de navegação, pois no projeto, a distância é de 100px, que dividido por 16px, resulta nos 6.25rem, respeitando a largura da barra de navegação*/
+  left: 50vw;
+  /*define que o texto aparecerá a partir de 50vw*/
+}
+
+.slide__copy h6 {
+  /*aplicará as configurações para todos os h6 que estiverem dentro da classe slide__copy*/
+  font-size: 0.9375rem;
+  /*define o tamanho da fonte - como no projeto tem 15px, são 15/16, ou seja, 0.9375rem*/
+  font-weight: 400;
+  /*define o peso da fonte - como no projeto é regular, então seria o equivalente a 400*/
+  text-transform: uppercase;
+  /*define que o texto ficará todo em caixa-alta*/
+  letter-spacing: 0.1875rem;
+  /*define o espaçamento personalizado entre as letras, conforme estipulado em projeto*/
+}
+
+.slide__copy h2 {
+  /*aplicará as configurações para todos os h2 que estiverem dentro da classe slide__copy*/
+  font-size: 6.25rem;
+  /*define o tamanho da fonte - como no projeto tem 100px, são 100/16, ou seja,6.25rem*/
+  text-transform: uppercase;
+  /*define que o texto ficará todo em caixa-alta*/
+  line-height: 6.25rem;
+  /*define a altura de linha, para que o espaçamento entre as palavras fique identico ao projeto*/
+}
+
+.slide__copy h2 span {
+  /*aplicará as configurações para o elemento SPAN dentro do h2*/
+  display: block;
+  /*define que independente da resolução da tela, haverá a quebra de linha entre as palavras CREATIVE e MINDS, conforme o projeto*/
+}
+
+#counter {
+  /*atribuirá propriedades ao seletor de ID counter*/
+  background-color: var(--color-primary);
+  /*define a cor do background para o default do projeto*/
+  color: #fff;
+  /*define a cor do texto*/
+  text-transform: uppercase;
+  /*define que o texto seja em letra maiúscula*/
+}
+
+.counter__container {
+  /*atribuirá propriedades ao seletor de classe em questão*/
+  display: grid;
+  /*fará a quebra do texto para baixo, ao invés de alinhamento na horizontal - precisa definir o número de colunas*/
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /*fará a divisão em um número específico de colunas - colocando uma fração para cada, ele entenderá que é para distribuir igualmente as colunas naquele trecho - a função repeat exige como primeiro dado o número de repetições e como segundo dado a fração para cada trecho - acrescentamos ainda a função minmax para definir que cada trecho deve se apresentar em no mínimo 300px e no máximo 1fr*/
+  place-items: center;
+  /*funciona como justify-itens e aligh-itens, afetando horizontalmente e verticalmente a posição dos elementos*/
+  padding: 4.375rem 1rem;
+  /*definirá o espaçamento entre o texto e os limites superiores e inferiores do container - no projeto, por padrão tem 70px, ou seja, 70/16 = 4.375rem e colocado 1rem para a esquerda e direita*/
+}
+
+.counter__container h3 {
+  /*para aplicar propriedades para somente os h3 que estão dentro dessa classe*/
+  font-size: 2.1875rem;
+  /*define o tamanho da fonte, como são 35px em projeto, então, 35/16 = 2.1875rem*/
+}
+
+.counter__container h3 small {
+  /*para aplicar propriedades para somente os <small> que estão dentro desta tag*/
+  display: block;
+  /*define a quebra de linha entre os elementos*/
+  font-size: 1.25rem;
+  /*define o tamanho da fonte, como são 20px em projeto, então 20/16 = 1.25rem*/
+}
+
+.institutional {
+  /*aplicará propriedades para a classe institutional*/
+  display: grid;
+  /*fará a quebra do texto para baixo, ao invés de alinhamento na horizontal - precisa definir o número de colunas*/
+  grid-template-columns: auto auto;
+  /*fará a divisão em um número específico de colunas - colocando uma fração para cada, ele entenderá que é para distribuir proporcionalmente as colunas naquele trecho - usando automático, ele usará o espaço disponível para a imagem e deixará um espaço com respiro maior para o nosso texto, ao invés de forçarmos isso, ficando mais harmonioso, deixando o navegador calcular quanto ele teria que aplicar.*/
+  gap: 3.125rem;
+  /*define o espaçamento entre os elementos*/
+  align-items: center;
+  /*fará com que os elementos fiquem alinhados ao centro - no projeto são 50px, portanto, 50/16 = 3.125rem*/
+  padding: 4.375rem;
+  /*definirá o espaçamento entre o conteúdo e os limites superiores e inferiores do container - no projeto, por padrão tem 70px, ou seja, 70/16 = 4.375rem*/
+}
+
+.institutional__image {
+  /*aplicará as propriedades para a classe em questão (primeira caixa - imagem)*/
+  max-width: 550px;
+  /*toda vez que estou definindo uma largura máxima, posso definí-la em pixels*/
+}
+
+.institutional__copy {
+  /*aplicará as propriedades para a classe em questão (segunda caixa - texto)*/
+  padding: 0 1.875rem 0 0;
+  /*definirá o espaçamento entre o conteúdo e os limites superiores e inferiores do container como zero e o espaçamento entre o conteúdo e os limites da esquerda e direita do projeto - no projeto, por padrão, tem 30px, ou seja, 30/16 = 1.875rem */
+}
+
+.institutional__copy h6 {
+  /*aplicará as propriedades para os elementos h6 contidos nesta classe*/
+  font-size: 0.875rem;
+  /*definirá o tamanho da fonte conforme especificado em projeto, que no caso é 14px, ou seja, 14/16=0.875rem*/
+  font-weight: 400;
+  /*definirá o peso da fonte (medium)*/
+  letter-spacing: 0.1rem;
+  /*definirá o espaçamento entre as letras - no projeto, seria de 1px, ou seja, 1/16 = 0.0625rem, mas arredondaremos para 0.1rem*/
+  text-transform: uppercase;
+  /*definirá a formatação em caixa alta para o texto*/
+  margin: 0;
+  /*definirá a margem do elemento para zero*/
+
+}
+
+.institutional__copy h4 {
+  /*aplicará as propriedades para os elementos h4 contidos nesta classe*/
+  font-size: 1.5625rem;
+  /*definirá o tamanho da fonte conforme especificado em projeto, que no caso é 25px, ou seja, 25/16=1.5625rem*/
+  /*por default o h4 já recebe o peso "bold", então, não é preciso estilizar o peso da fonte*/
+  margin-top: 1rem;
+  /*definirá a margem do topo deste elemento para 16px, conforme projeto, ou seja, 1rem*/
+}
+
+.institutional p {
+  /*aplicará as propriedades para o elemento <p> contido nesta classe*/
+  font-family: 'Roboto', sans-serif;
+  /*definirá a fonte Roboto como principal para este elemento, e uma segunda opção de carregamento, como a sans-serif*/
+  font-size: 1.0625rem;
+  /*definirá o tamanho da fonte conforme especificado em projeto, que no caso é 17px, ou seja, 17/16=1.0625rem*/
+  line-height: 1.6875rem;
+  /*define a altura de linha, para que o espaçamento entre as palavras fique identico ao projeto, que neste caso é 27px, ou seja, 27/16=1.6875rem*/
+  /* margin-bottom: 0; */
+  /*primeiro ele zera a margem de baixo e logo na sequência inclui o novo valor de margem, para mostrar como o efeito em cascata funciona*/
+  margin-bottom: 2.5rem;
+  /*define a margem de baixo para 40px, ou seja, 40/16=2.5rem, conforme projeto*/
+}
+
+.quote {
+  /*as propriedades serão aplicadas para a seção com classe quote*/
+  background-image: url(../images/parallax.jpg);
+  /*faz a importação da imagem salva na pasta - meste caso usamos .. pois ele precisa voltar uma pasta, para acessar a pasta images, já que agora ela é irmã da pasta css*/
+  background-attachment: fixed;
+  /*define o efeito do parallax acontecendo, que é a tela passando pela imagem*/
+  background-repeat: no-repeat;
+  /*definirá que não haja a repetição do background durante o efeito*/
+  background-size: cover;
+  /*definirá que o nosso background ocupará mais espaço, ou seja, cobrirá a região*/
+  background-position: center;
+  /*definirá que o nosso background ficará centralizado na tela*/
+}
+
+.quote__container {
+  /*aplicará as propriedades no container que está contido na seção quote*/
+  display: grid;
+  /*definirá a exibição dos elementos como tabela*/
+  align-items: center;
+  /*definirá o alinhamento dos itens no centro*/
+  justify-items: end;
+  /*definirá o alinhamento da caixa na direita*/
+  min-height: 80vh;
+  /*define a altura mínima de visualização da imagem - view height*/
+}
+
+.quote__copy {
+  /*aplicará as propriedades para a classe em questão*/
+  background-color: #fff;
+  /*definirá a cor branca para o background da caixa como é em projeto*/
+  padding: 5.625rem 4.375rem;
+  /*define o tamanho dinâmico da caixa, por conta do espaçamento entre o texto e as bordas da caixa, sendo que o primeiro valor é para cima e para baixo (90px/16px=5.625rem) e o segundo valor é para esquerda e direita (70px/16px=4.375rem)*/
+}
+
+.quote__copy h6 {
+  /*aplicará as propriedades para o elemento h6 dentro do quote__copy*/
+  font-size: 0.9375rem;
+  /*define o tamanho da fonte, que no caso é (15px/16px=0.9375rem)*/
+  font-weight: 400;
+  /*define o peso da fonte, que no caso do projeto é regular*/
+  letter-spacing: 0.1875rem;
+  /*define o espaçamento entre as letras, que em projeto é de (3px/16px=0.1875rem)*/
+  line-height: 1.4375rem;
+  /*define a altura entre linhas, que em projeto é de (23px/16px=1.4375rem)*/
+  max-width: 53ch;
+  /*define a largura de um elemento que tenha texto, a partir de um limite de caracteres para haver a quebra de linha forçada - ideal para aplicar nos parágrafos do site*/
+  text-transform: uppercase;
+  /*define as letras para ficarem todas em caixa alta*/
+  margin: 0;
+  /*remove a margem do elemento h6*/
+}
+
+.quote__copy h2 {
+  /*aplicará as propriedades para o elemento h2 dentro do quote__copy*/
+  font-size: 5rem;
+  /*define o tamanho da fonte, que no caso é (80px/16px=5rem) - o font-weight está certo, porque a formatação do h2 já é bold por padrão*/
+  line-height: 5rem;
+  /*define a altura entre linhas, que em projeto é de (80px/16px=5rem)*/
+  text-transform: uppercase;
+  /*define as letras para ficarem todas em caixa alta*/
+  letter-spacing: -0.1875rem;
+  /*define o espaçamento entre as letras, que em projeto é de (-3px/16px=-0.1875rem)*/
+  margin: 1.875rem 0;
+  /*define a margem superior/inferior do elemento h2 para se aproximar do resultado esperado em projeto (30px/16px=1.875rem) - em projeto, seria 40px, mas não leva em consideração o tamanho da própria fonte, então diminuímos um pouco para ficar em escala mais aproximada e definimos margem 0 para esquerda e direita pois não há*/
+}
+
+.quote__copy h2 span {
+  /*aplicará as propriedades para o elemento span do h2 dentro do quote__copy*/
+  display: block;
+  /*define a quebra de linha dos elementos de texto, visto que no HTML já foi preparado para fazer desta forma, através do display: block*/
+}
