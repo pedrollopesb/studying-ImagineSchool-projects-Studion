@@ -46,9 +46,17 @@
   /*aplicará as configurações no texto do cabeçalho*/
   position: absolute;
   /*define a posição dos elementos de texto, neste caso - deixa ele ir para todo lugar da página - este é o elemento pai*/
-  top: 6.25rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  padding-left: 50vw;
+  align-items: center;
+
+  /* top: 6.25rem; */
   /*define que ele ficará no topo, numa distância de 6.25rem a partir da barra de navegação, pois no projeto, a distância é de 100px, que dividido por 16px, resulta nos 6.25rem, respeitando a largura da barra de navegação*/
-  left: 50vw;
+  /* left: 50vw; */
   /*define que o texto aparecerá a partir de 50vw*/
 }
 
