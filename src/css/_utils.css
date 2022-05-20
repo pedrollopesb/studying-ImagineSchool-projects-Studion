@@ -1,5 +1,13 @@
 /*onde guardaremos as classes para controlar como algo é mostrado*/
 
+.container {
+  /*aplicará as alterações em toda a estrutura do container*/
+  max-width: 1140px;
+  /*único lugar em que usaria uma dimensão em pixels - para definir um tamanho máximo para garantir qu enosso conteúdo fique no meio como em nosso design*/
+  margin: 0 auto;
+  /*para não aplicar margem para cima e para baixo e deixar para o navegador definir as margens para esquerda e direita*/
+}
+
 .copy--primary {
   /*aplicará a coloração na classe da logo, conforme o projeto*/
   color: var(--color-primary)
