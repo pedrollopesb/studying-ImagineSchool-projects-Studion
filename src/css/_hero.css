@@ -6,18 +6,27 @@
   /*precisamos colocar ele fora da renderização padrão do HTML, ou seja, vazando a div, sendo ele quem "contém" o conteúdo do hero_background*/
   height: 34.625rem;
   /*definirá que o nossa seção hero terá 554px/16px=34.625rem, conforme estipulado em projeto*/
+  background-color: #000;
+  /*definirá o background na cor preta*/
 }
 
 .hero__background {
   /*aplicará as configurações para o background contido na div da classe hero*/
   position: absolute;
   /*permitirá que ele vaze a div do hero*/
-  z-index: -1;
-  /*definirá a camada onde o texto está aparecendo*/
+  height: 100%;
   object-fit: contain;
   /*propriedade para conter a iamgem*/
   object-position: center;
   /*propriedade para centralizar a imagem*/
+}
+
+.hero__container {
+  /*aplicará as configurações para a classe hero__container*/
+  position: relative;
+  /*definirá que ele é o elemento pai que servirá de referência para os filhos (position: absolute)*/
+  height: 100%;
+  /*definirá que terá altura de 100% do espaço disponível*/
 }
 
 .hero__copy {
@@ -26,9 +35,9 @@
   /*para movimentar essa div em relação ao relative*/
   bottom: 0;
   /*fará com que ele esteja posicionado a 0 em relação à parte inferior*/
-  right: 0rem;
+  right: 0;
   /*fará com que ele esteja posicionado a 0 em relação à direita*/
-  width: 50vw;
+  width: 50%;
   /*fará com que ele ocupe metade da nossa tela, ou seja, 50 view width*/
   padding: 7rem 1.875rem;
   /*definirá um espaçamento entre o conteúdo da div e a caixa de 112px/16px=7rem para cima e para baixo e 30px/16px=1.875rem para esquerda e para direita, conforme projeto*/

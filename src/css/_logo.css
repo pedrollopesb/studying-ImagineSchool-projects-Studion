@@ -1,0 +1,33 @@
+/*propriedades aplicadas sobre a logo*/
+
+.logo-studion {
+  /*aplicará as configurações no título studion*/
+  font-size: 2.375rem;
+  /*definindo o tamanho da fonte, sendo que no projeto são 38px ou seja 38px/16px = 2,375rem*/
+  font-weight: 900;
+  /*definindo o peso da fonte - black*/
+  line-height: 1ch;
+  /*definindo a altura da linha, sendo ch a unidade de medida relativa ao tamanho da altura do glifo 0 da fonte, como base de unidade - boa para lidar com espaçamento de texto*/
+  text-transform: uppercase;
+  /*para deixar todo o texto em caixa alta*/
+  text-align: right;
+  /*para alinhar o texto da logo à direita*/
+}
+
+.logo-studion__subtitle {
+  /*aplicará as configurações no subtítulo eventos*/
+  display: block;
+  /*aplicará a quebra de linha*/
+  font-size: 0.875rem;
+  /*definindo o tamanho da fonte - como no projeto são 14px, significa que dividimos 14px/16px, já que 1rem = 16px, obtendo assim 0,875rem*/
+  font-weight: 300;
+  /*definindo o peso da fonte - regular*/
+}
+
+.logo-studion a {
+  /*aplicará configurações ao elemento "a" da logo studion da navbar*/
+  text-decoration: none;
+  /*fará com que sumirá a linha do sublinhado gerado pelo link de acesso a homepage clicando na logo*/
+  color: #fff;
+  /*definirá a cor branca para a parte do STUDI e EVENTOS*/
+}

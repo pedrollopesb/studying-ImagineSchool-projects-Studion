@@ -18,7 +18,8 @@
   /*definirá a separação automática de colunas, especificando que serão 3 e que elas serão divididas proporcionalmente pelo próprio navegador através do valor "auto"*/
   align-items: center;
   /*definirá que cada um dos itens seja alinhado ao centro*/
-  padding: 5.25rem 0 3.75rem 0;
+  /* padding: 5.25rem 0 3.75rem 0; */
+  padding: 5rem 0;
   /*definirá um pading de 84px/16px=5.25rem para cima, 0 para a direita, 60px/16px=3.75rem para baixo e 0 para a esquerda, em ordem*/
 }
 
@@ -40,6 +41,8 @@
   /*definirá que a primeira coluna terá como distância o valor de 12ch, ou seja, 12 caracteres - "receba news e", conforme o projeto prevê e a segunda coluna definida automaticamente*/
   gap: 1.375rem;
   /*definirá o espaçamento entre o label e o input/button, sendo que em projeto é 20px/16px=1.25rem*/
+  align-items: center;
+  /*definirá o alinhamento no centro*/
 }
 
 .footer__form label {
