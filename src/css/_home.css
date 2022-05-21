@@ -251,8 +251,8 @@
 }
 
 /* Tablet */
-@media screen and (min-width: 720px) and (max-width: 1279px) {
-  .quote__copy {
+@media screen and (min-width: 719px) and (max-width: 1279px) {
+  .institutional__image {
     justify-self: center;
     /*Farão o alinhamento na horizontal da imagem para ficar ao centro da tela*/
   }
