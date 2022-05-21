@@ -34,22 +34,77 @@
   /*este valor de padding aplicará diretamente na barra de navageção - se passar só um valor aqui ele aplicará o mesmo para todos os lados - se pasar mais de um valor o primeiro aplica para cima e para baixo (0) e o segundo para esquerda e para a direita (1)*/
 }
 
+/* Mobile */
 .navbar__links {
   /*aplicará as alterações em todos os links da barra de navegação*/
+  display: none;
+  /* Aplicando a responsividade, acrescentamos display none para que a barra de navegação desapareça */
   justify-self: end;
   /*propriedade de alinhamento para itens que estão dentro de um grid - com a subpropriedade end fará com que a barra de navegação se alinhará a direita */
 }
 
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .navbar__links {
+    display: flex;
+    /* Como consta no _base.css */
+  }
+}
+
+/* Mobile */
+.navbar__links.active {
+  /* Assim mostra que o elemento tem duas classes, ou seja, a primeira links e a segunda active e não que estou pegando um elemento dentro da classe como no caso abaixo*/
+  display: grid;
+  /* Definirá a visualização da tabela para formatar ele */
+  place-items: center;
+  /* Esta proprieadde trata do align items (vertical) e justify itens (horizontal), definindo ao centro */
+
+  position: absolute;
+  /* Definirá seu posicionamento em relação a um elemento pai */
+  top: 0;
+  /* Definirá afastamento de 0 a partir do top */
+  left: 0;
+  /* Definirá afastamento de 0 a partir da esquerda */
+  z-index: 10;
+  /* Definirá que ele irá aparecer com prioridade absoluta sobre todos os elementos */
+
+  width: 100vw;
+  /* Definirá que ele terá uma visualização de 100 da viewport lateral */
+  height: 100vh;
+  /* Definirá que ele terá uma visualização de 100 da viewport altura */
+  margin: 0;
+  /* Para remover a margem top e bottom */
+  padding: 3rem 2rem;
+  /* Passando um padding de 3 rem para cima e para baixo e 2 rem para os lados */
+
+  background: #000e;
+  /* Definirá a cor preta para ele, com transparencia de e */
+}
+
+/* Mobile */
 .navbar__links li {
   /*aplicará as alterações em todos os itens da lista da barra de navegação*/
-  font-size: 0.875rem;
+  font-size: 1.75rem;
   /*no projeto base a fonte das letras da barra de navegação tÊm 14px, ou seja 14/16 = 0,875rem*/
-  margin-right: 3rem;
+  /* Para o mobile foi alterado para 1.75rem */
+  /* margin-right: 3rem; */
   /*desta forma, conseguimos separar os itens da lista com um espaçamento proporcional entre elas*/
   /*se quiséssemos utilizar um valor correspondente a 10px, porém, em rem, teríamos que dividir 10/16, visto que 1rem equivale a 16px, o que resultaria em 0,625, sendo este valor agora convertido em rem */
   /*como o projeto define que são 48 pixels de distância entre cada link da barra da navegação, 48/3 = 3 rem*/
+  /* Foi desabilitado para só aparecer na visualização desktop e não mobile */
   text-transform: uppercase;
   /*essa propriedade transforma todo o texto em caixa alta para estilização do texto*/
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .navbar__links li {
+    font-size: 0.875rem;
+    /*no projeto base a fonte das letras da barra de navegação tÊm 14px, ou seja 14/16 = 0,875rem*/
+    margin-right: 3rem;
+    /*como o projeto define que são 48 pixels de distância entre cada link da barra da navegação, 48/3 = 3 rem*/
+  }
+  
 }
 
 .navbar__links a {
@@ -72,4 +127,37 @@
   /*É um estado em que quando eu passar o mouse em cima dos elementos de tag "a", algo deverá acontecer*/
   color: var(--color-primary);
   /*Ao passar o mouse por cima da barra de navegação, cada item assumirá essa cor. A função var chama a variável cor cadastrada na seção root*/
+}
+
+/* Mobile */
+.navbar__menu-btn {
+  cursor: pointer;
+  position: relative;
+  /* Ele será o elemento pai de posição, ou seja, que os elementos absolutos farão referência */
+  z-index: 10;
+  /* Definirá a prioridade da camada */
+  font-size: 2rem;
+  /* Define o tamanho da fonte do botão */
+  width: fit-content;
+  /* Define que ele ocupará somente o espaço necessário para ele */
+  color: #fff;
+  /* Para deixar a cor do botão como branca */
+  background: unset;
+  /* Para remover o background */
+  border: unset;
+  /* Para remover a borda */
+  justify-self: end;
+  /* Para que ele se alinhe no final da linha (horizontal) */
+  align-self: start;
+  /* Para que ele se alinha na parte de cima da linha (vertical) */
+  margin-top: 2rem;
+  /* Para alinhar o botão em 2 rem abaixo do topo */
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .navbar__menu-btn {
+    display: none;
+    /* Para que o botão não ocupe espaço na visualização desktop */
+  }
 }

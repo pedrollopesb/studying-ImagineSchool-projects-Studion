@@ -10,39 +10,76 @@
   /*definirá um alinhamento do texto*/
 }
 
+/* Mobile */
 .footer__container {
   /*aplicará as configurações para o container contido no footer*/
   display: grid;
   /*definirá que poderei dividir este trecho em partes*/
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: unset;
   /*definirá a separação automática de colunas, especificando que serão 3 e que elas serão divididas proporcionalmente pelo próprio navegador através do valor "auto"*/
+  /* Aplicando a responsividade, o valor foi alterado de repeat(3, auto) para unset, para desabilitar essa propriedade */
+  grid-template-rows: auto;
+  /* Aplicando a responsividade, esta propriedade foi incluída para separar os elementos em linhas */
+  gap: 3rem;
+  /*Aplicando a responsividade, gerará um gap (espaçamento) entre as colunas e linhas entre os elementos de 3rem, na visualização mobile*/
   align-items: center;
   /*definirá que cada um dos itens seja alinhado ao centro*/
   /* padding: 5.25rem 0 3.75rem 0; */
-  padding: 5rem 0;
+  padding: 3rem 0;
   /*definirá um pading de 84px/16px=5.25rem para cima, 0 para a direita, 60px/16px=3.75rem para baixo e 0 para a esquerda, em ordem*/
+  /* Aplicando a responsividade o valor de 5rem foi alterado para 3rem */
 }
 
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .footer__container {
+    grid-template-columns: repeat(3, auto);
+    /*definirá a separação automática de colunas, especificando que serão 3 e que elas serão divididas proporcionalmente pelo próprio navegador através do valor "auto"*/
+    grid-template-rows: unset;
+    /* Removerá a propriedade de linhas desse grid, para não ficar alternando */
+    padding: 5rem 0;
+    /*definirá um pading de 84px/16px=5.25rem para cima, 0 para a direita, 60px/16px=3.75rem para baixo e 0 para a esquerda, em ordem*/
+  }
+}
+
+/* Mobile */
 .footer .logo-studion {
   /*aplicará as configurações exclusivamente para o logo da Studion localizado no rodapé - footer, pois se fizesse somente como .logo-studion chamaria outros itens do projeto que estão com esta mesma classe*/
-  justify-self: start;
+  justify-self: center;
   /*definirá que ele mesmo se alinhará no começo, ou seja, à esquerda*/
+  /* Aplicando a responsividade, o valor start foi alterado para center, para se alinhar ao centro quando visualizando em mobile */
   margin: 0;
   /*para remover a margem do elemento e permitir que o padding faça o efeito que precisa de separação dos elementos do footer com a seção acima*/
 }
 
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .footer .logo-studion {
+    justify-self: start;
+    /* definirá que ele mesmo se alinhará no começo, ou seja, na esquerda */
+  }
+}
+
+/* Mobile */
 .footer__form {
   /*definirá as configurações para o formulário do rodapé, este não precisa escopar como exclusividade, pois ele já tem uma classe só para ele */
   display: grid;
   /*definirá que será uma tabela de 2 colunas*/
-  align-items: center;
-  /*definirá a posição dos elementos no centro*/
-  grid-template-columns: 9ch auto;
+  grid-template-columns: unset;
   /*definirá que a primeira coluna terá como distância o valor de 12ch, ou seja, 12 caracteres - "receba news e", conforme o projeto prevê e a segunda coluna definida automaticamente*/
+  /* Aplicando a responsividade, esssa propriedade de 9ch auto foi trocada para unset para desativar e deixar os itens um abaixo do outro */
   gap: 1.375rem;
   /*definirá o espaçamento entre o label e o input/button, sendo que em projeto é 20px/16px=1.25rem*/
   align-items: center;
   /*definirá o alinhamento no centro*/
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .footer__form {
+    grid-template-columns: 9ch auto;
+    /*definirá que a primeira coluna terá como distância o valor de 12ch, ou seja, 12 caracteres - "receba news e", conforme o projeto prevê e a segunda coluna definida automaticamente*/
+  }
 }
 
 .footer__form label {
@@ -51,13 +88,14 @@
   /*definirá a fonte para o texto do rótulo conforme projeto, 14px/16px=0.875rem*/
   font-weight: 300;
   /*definirá o peso da fonte, sendo Light, conforme em projeto*/
-  text-align: center;
+  /* text-align: center; */
   /*definirá o alinhamento do texto no centro*/
   line-height: 1rem;
   /*definirá a altura de linha*/
 }
 
-.footer__email {
+/* Mobile */
+.footer__form__email {
   /*aplicará as configurações para o elemento fieldset contido no formulário do rodapé*/
   display: grid;
   /*aplicará a propriedade de colunas para os filhos (input e button)*/
@@ -65,7 +103,18 @@
   /*aplicará o tamanho automático para o input e o tamanho de 54px/16px=3.375rem*/
   /* width: 100%; */
   /*para que ele ocupe todo o espaço disponível*/
+  padding: 0 1rem;
+  /* Aplicando a responsividade definimos um padding de 0 para cima e para baixo e 1rem para os lados, para gerar um espaçamento para o formulário do email em relação as bordas, na visualização mobile  */
 }
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .footer__form__email {
+    padding: 0;
+    /* Para ocupar o espaço disponível */
+  }
+}
+
 
 .footer__form input {
   /*aplicará somente para o input dentro do footer__form*/
@@ -73,14 +122,14 @@
   /*definirá a cor do background do input - campo de preenchimento do e-mail*/
   border: unset;
   /*remove a borda da caixa de e-mail*/
-  padding: 1rem;
-  /*define o padding espaçamento entre o texto e a caixa de 1rem para os lados, sendo 16px no projeto*/
   font-size: 0.875rem;
   /*definirá a fonte do texto, 14px/16px=0.875rem*/
   font-weight: 700;
   /*definirá o peso da fonte para Bold, conforme estipulado em projeto*/
   text-transform: uppercase;
   /*definirá o padrão de texto em caixa alta*/
+  padding: 1rem;
+  /*define o padding espaçamento entre o texto e a caixa de 1rem para os lados, sendo 16px no projeto*/
   color: #000;
   /*definirá a cor de texto*/
 }
@@ -117,10 +166,19 @@
 
 }
 
+/* Mobile */
 .footer__social {
   /*definirá as configurações para a parte dos ícones das redes sociais*/
-  justify-self: end;
+  justify-self: center;
   /*definirá que os ícones estarão alinhados ao final da seção, ou seja, à direita*/
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .footer__social {
+    justify-self: end;
+    /* definirá que ele mesmo se alinhará no fim, ou seja, na direita */
+  }
 }
 
 .footer__social a,

@@ -4,14 +4,31 @@
   box-sizing: border-box;
 }
 
+/* Mobile - definido antes na ordem da cascata (mobile first) - na ordem de tamanho de dispositivo */
 :root {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 4.25vw;
   /*nessa região utilizamos a definição de fontes no seletor próprio para o root, ou seja, onde estão as informações próprias para o site*/
-  /*16px = 1rem - é o que o navegador aplica por padrão na formatação do site*/
+  /*16px = 1rem - é o que o navegador aplica por padrão na formatação do site, mas alteramos para 4.25vw para considerar o mobile first (largura padrão para dispositivos mobile)*/
   color: var(--color-copy);
   /*estabelecerá que a cor padrão de texto é nesse tom de cinza*/
 }
+
+/* Tablet */
+@media screen and (min-width: 720px) {
+  :root {
+    font-size: 2.25vw;
+  }
+}
+
+/* Desktop - mobile first (primeira renderização que será realizada - celular é mais escravo da conexão que ele tem*/
+@media screen and (min-width: 1280px) {
+  :root {
+    font-size: 16px;
+  }
+}
+/* Meu desktop terá no mínimo 1280px de largura - para ter certeza de que abrirá na largura certa
+O uso do rem permite uma facilidade na hora de fazer uma adaptação para multidispositivos */
 
 body {
   /*aplicará as alterações em toda a estrutura do body*/
