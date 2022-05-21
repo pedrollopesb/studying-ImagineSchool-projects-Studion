@@ -1,6 +1,6 @@
 /*são as configurações exclusivas da página home*/
 
-#slider {
+.slider {
   /*aplicará as configurações no slider contido no cabeçalho (header)*/
   background-color: #000;
   color: #fff;
@@ -20,6 +20,48 @@
 
   background-position: center;
   define o posicionamento do backgroud, para que o centro da imagem se aplique no centro do elemento*/
+}
+
+.slider__prev-arrow,
+.slider__next-arrow {
+/*aplicará as configurações para as classes em questão*/
+  width: 2.5rem;
+  /*definirá a largura da caixa que contem a seta do slider, 40px/16px = 2.5rem*/
+  height: 2.5rem;
+  /*definirá a altura da caixa que contem a seta do slider, 40px/16px = 2.5rem*/
+  border: 5px solid #fff;
+  /*aplicará as configurações de borda para a caixa das setas do slider, sendo a largura de linha, o estilo de linha e a cor*/
+  border-right: unset;
+  /*definirá que não temos uma borda à direita*/
+  border-bottom: unset;
+  /*definirá que não temos uma borda abaixo*/
+  opacity: 0.9;
+  /*definirá a opacidade das setas, dando um aspecto mais agradável (vai de 0 a 1), sendo 0 totalmente transparente e 1 totalmente visível*/
+}
+
+.slider__prev-arrow {
+  /*aplicará as configurações para a seta prévia (esquerda) do slider*/
+  z-index: 1;
+  /*aplicará a posição de prioridade para a seta, pois ela estava ficando por trás dos banners, devido ao efeito cascata*/
+  left: 1rem;
+  /*aplicará a posição 1rem à esquerda para as setas do carrocel - feitas com slick no JS*/
+  transform: rotate(-45deg);
+  /*definirá a rotação do elemento em 45 graus no sentido anti-horário para ficar no formato de seta para a esquerda*/
+}
+
+.slider__next-arrow {
+  /*aplicará as configurações para a seta posterior (direita) do slider*/
+  right: 1rem;
+  /*aplicará a posição 1rem à esquerda para as setas do carrocel - feitas com slick no JS*/
+  transform: rotate(135deg);
+  /*definirá a rotação do elemento em 135 graus no sentido horário para ficar no formato de seta para a direite*/
+}
+
+.slider__prev-arrow::before,
+.slider__next-arrow::before {
+/*aplicará as configurações para o pseudo-seletor do before das classes em questão, ou seja, para ser renderizado antes (before) do elemento ou depois (after)*/
+  content: '';
+  /*retirando o conteúdo da caixa de elemento*/
 }
 
 .slide {
