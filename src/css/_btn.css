@@ -38,6 +38,23 @@
   /*define a cor do texto quando passar o mouse por cima, que neste caso, como o background ficará amarelo, o texto precisa alterar para branco, para viabilizar a leitura*/
 }
 
+/* Mobile */
+.btn--institutional,
+.btn--quote {
+  display: block;
+  /* Utilizada para realizar a quebra de linha */
+  margin: 0 auto;
+  /* Utilizada para centralizar o botão */
+}
+
+@media screen and (min-width: 1280px) {
+  .btn--institutional,
+  .btn--quote {
+    display: inline;
+  }
+  
+}
+
 .btn--institutional:hover,
 .btn--contact:hover {
   /*aplicará as propriedades de modificador para o botão*/
